@@ -8,6 +8,8 @@
     <div class="col-md-4">
         <div class="card mb50">
             <div class="card-body">
+
+                
             @if(!empty($review->image))
                 <div class='image-wrapper'><img class='book-image' src="{{ asset('storage/images/'.$review->image) }}"></div>
             @else
@@ -18,6 +20,10 @@
                 <p class='description'>
                     {{ $review->body }}
                 </p>
+                <p class='description'>
+                    {{ $review->created_at }}
+                </p>
+                
                 <a href="{{ route('show', ['id' => $review->id ]) }}" class='btn btn-secondary detail-btn'>詳細を読む</a>
             </div>
         </div>
